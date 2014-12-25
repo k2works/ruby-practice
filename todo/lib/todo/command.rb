@@ -4,9 +4,18 @@ module Todo
    # コマンドラインベースの処理を行うクラスです
    # @author k2works
    class Command
+	  def self.run(argv)
+		 new(argv).execute
+	  end
+
+	  def initialize(argv)
+		 @argv = argv
+	  end
 	  # コマンドを実行する
 	  # @retrun [void]
 	  def execute
+		 options = Options.parse!(@argv)
+		 
 		 DB.prepare
 	  end
 	  # タスクを作成する

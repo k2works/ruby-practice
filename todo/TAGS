@@ -1,12 +1,23 @@
 
-lib/todo/command.rb,269
+lib/todo/command/options.rb,318
+module TodoTodo4,0
+   class CommandCommand7,0
+	  module OptionsOptions8,0
+		 def self.parse!(argv)parse!13,0
+		 def self.create_sub_command_parsers(options)create_sub_command_parsers43,0
+		 def self.create_command_parsercreate_command_parser81,0
+		 def self.help_sub_command(parser)help_sub_command112,0
+
+lib/todo/command.rb,340
 module TodoTodo2,0
    class CommandCommand6,0
-	  def executeexecute9,0
-	  def creaete_task(name, content)creaete_task16,0
-	  def delete_task(id)delete_task23,0
-	  def update_task(id, attributes)update_task30,0
-	  def find_tasks(status_name)find_tasks43,0
+	  def self.run(argv)run7,0
+	  def initialize(argv)initialize11,0
+	  def executeexecute16,0
+	  def creaete_task(name, content)creaete_task25,0
+	  def delete_task(id)delete_task32,0
+	  def update_task(id, attributes)update_task39,0
+	  def find_tasks(status_name)find_tasks52,0
 
 lib/todo/db.rb,274
 module TodoTodo5,0
