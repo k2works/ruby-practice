@@ -1,0 +1,44 @@
+
+1-1.rb,43
+class SampleSample1,0
+   def saysay2,0
+
+11-2.rb,192
+class BucketBucket4,0
+   def initialize(limit =5)initialize5,0
+   def append(str)append13,0
+   def flushflush23,0
+   def appendable?appendable?37,0
+   def flashable?flashable?41,0
+
+14-39.rb,105
+module MultiStackSampleMultiStackSample4,0
+   def self.stackAstackA5,0
+   def self.stackBstackB9,0
+
+14-40.rb,108
+module DebuggerSampleDebuggerSample3,0
+   def self.conditional_print(obj,condition)conditional_print4,0
+
+2-1.rb,27
+def hello(names)hello1,0
+
+7-10.rb,152
+class EvalTargetEvalTarget1,0
+   def initializeinitialize2,0
+   def instance_bindinginstance_binding6,0
+   def private_methodprivate_method12,0
+
+7-3.rb,125
+class DelegateArrayDelegateArray1,0
+   def initializeinitialize2,0
+   def method_missing(name, *args)method_missing5,0
+
+7-8.rb,58
+class LoggingInstanceVariableLoggingInstanceVariable1,0
+
+7-9.rb,168
+class AttrClassAttrClass1,0
+   def initializeinitialize2,0
+   def add_reader(instance_val_name)add_reader6,0
+   def add_writer(instance_val_name)add_writer14,0
