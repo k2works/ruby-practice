@@ -42,4 +42,4 @@ module TodoTodo4,0
 
 lib/todo/version.rb,53
 module TodoTodo1,0
-  VERSION = "0.0.1"VERSION2,0
+  VERSION = "1.0.0"VERSION2,0

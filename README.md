@@ -11,8 +11,7 @@ Ruby再入門
 
 # 構成
 + [コマンドラインアプリケーション開発](#1)
-+ [パート２](#2)
-+ [パート３](#3)
++ [Webアプリケーション開発](#2)
 
 # 詳細
 ## <a name="1">コマンドラインアプリケーション開発</a>
@@ -79,7 +78,34 @@ _todo/lib/todo.rb_
 
 #### 処理を行ったタスクの表示
 
-## <a name="2">パート２</a>
-## <a name="3">パート３</a>
+### Todo管理アプリケーションの完成とgemパッケージ化
+
+#### Todo管理アプリケーション1.0.0の完成
+```bash
+$ bundle exec rake build
+```
+
+#### 最初のユーザーになってみよう
+```bash
+$ bundle exec rake install
+$ gem list todo
+$ rm ~/.todo/todo.sqlite3
+$ todo -v
+todo 1.0.0
+$ todo -h
+Usage: todo [-h|--help][-v|--version]<command> [<args>]
+-v, --version                    Show program version
+-h, --help                       Show this message
+
+todo Available Commands:
+create -n name -c content                Create Todo Task
+update id -n name -c content -s status   Update Todo Task
+list -s status                           List   Todo Tasks
+delete id                                Delete Todo Task
+```
+
+## <a name="2">Webアプリケーション開発</a>
 
 # 参照
++ [パーフェクトRuby](http://gihyo.jp/book/2013/978-4-7741-5879-2)
++ [サポートページ](http://gihyo.jp/book/2013/978-4-7741-5879-2/support)
