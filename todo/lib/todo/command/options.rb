@@ -50,7 +50,7 @@ module Todo
 			sub_command_parsers['create'] = OptionParser.new do |opt|
 			   opt.banner = 'Usage: create <args>'
 			   opt.on('-n VAL','--name=VAL', 'task name') {|v| options[:name] = v}
-			   opt.on('-c VAL','--content=VAL', 'task content') {|v| optins[:content] = v}
+			   opt.on('-c VAL','--content=VAL', 'task content') {|v| options[:content] = v}
 			   opt.on_tail('-h','--help','Show this message') {|v| help_sub_command(opt)}
 			end
 

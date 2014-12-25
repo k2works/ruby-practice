@@ -15,14 +15,30 @@ module Todo
 	  # @retrun [void]
 	  def execute
 		 options = Options.parse!(@argv)
+		 sub_command = options.delete(:command)
 		 
 		 DB.prepare
+
+		 tasks = case sub_command
+				 when 'create'
+					create_task(options[:name], options[:content])
+				 when 'delete'
+					delete_task(options[:id])
+				 when 'update'
+					update_task(options.delete(:id), options)
+				 when 'list'
+					find_tasks(options[:status])
+				 end
+		 display_tasks tasks
+
+	  rescue => e
+		 abort "Error: #{e.message}"
 	  end
 	  # タスクを作成する
 	  # @param name [String] 名前
 	  # @param content [Sgtring] 内容
 	  # @return [void]
-	  def creaete_task(name, content)
+	  def create_task(name, content)
 		 # タスクの作成時のstatusはデフォルト値が使われてNOT_YETとなる
 		 Task.create!(name: name, content: content).reload
 	  end
@@ -58,6 +74,36 @@ module Todo
 		 else
 			all_tasks
 		 end
+	  end
+
+	  private
+
+	  # Taskのレコードを整形して出力する
+	  # @param [Todo::Task, ActiveRecord::Relation] tasks 出力するレコード
+	  # @return [void]
+	  def display_tasks(tasks)
+		 header = display_format('ID','Name','Content','Status')
+
+		 puts header
+		 Array(tasks).each do |task|
+			puts display_format(task.id, task.name,task.content, task.status_name)
+		 end		 
+	  end
+
+	  # Taskのレコードを整形する
+	  # @param [Fixnum, String] id       レコードのid
+	  # @param [String]         name     レコードのname
+	  # @param [String]         content  レコードのcontent
+	  # @param [String]         status   レコードのstatus
+	  # @return [string] 表示用に整形された文字列
+	  def display_format(id,name,content,status)
+		 name_length    = 20 - full_width_count(name)
+		 content_length = 40 - full_width_count(content)		 
+		 [id.to_s.rjust(4), name.ljust(name_length), content.ljust(content_length),status.center(10)].join(' | ')
+	  end
+
+	  def full_width_count(string)
+		 string.each_char.select{ |char| !(/[ -~。-゜]/.match(char))}.count
 	  end
    end
 end
