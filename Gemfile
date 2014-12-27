@@ -27,3 +27,6 @@ gem 'ruby-lint'
 gem 'method_source', ">= 0.8.2"
 gem 'gist'
 gem 'guard-yard'
+gem 'rack'
+gem 'sinatra'
+gem 'haml'
