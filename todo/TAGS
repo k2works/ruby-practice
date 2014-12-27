@@ -1,26 +1,30 @@
 
+lib/application.rb,74
+module TodoTodo7,0
+   class Application < Sinatra::BaseApplication8,0
+
 lib/todo/command/options.rb,318
 module TodoTodo4,0
    class CommandCommand7,0
 	  module OptionsOptions8,0
 		 def self.parse!(argv)parse!13,0
 		 def self.create_sub_command_parsers(options)create_sub_command_parsers43,0
-		 def self.create_command_parsercreate_command_parser81,0
-		 def self.help_sub_command(parser)help_sub_command112,0
+		 def self.create_command_parsercreate_command_parser87,0
+		 def self.help_sub_command(parser)help_sub_command119,0
 
-lib/todo/command.rb,506
+lib/todo/command.rb,507
 module TodoTodo2,0
    class CommandCommand6,0
 	  def self.run(argv)run7,0
 	  def initialize(argv)initialize11,0
 	  def executeexecute16,0
-	  def create_task(name, content)create_task41,0
-	  def delete_task(id)delete_task48,0
-	  def update_task(id, attributes)update_task55,0
-	  def find_tasks(status_name)find_tasks68,0
-	  def display_tasks(tasks)display_tasks84,0
-	  def display_format(id,name,content,status)display_format99,0
-	  def full_width_count(string)full_width_count105,0
+	  def create_task(name, content)create_task50,0
+	  def delete_task(id)delete_task57,0
+	  def update_task(id, attributes)update_task64,0
+	  def find_tasks(status_name)find_tasks77,0
+	  def display_tasks(tasks)display_tasks93,0
+	  def display_format(id,name,content,status)display_format108,0
+	  def full_width_count(string)full_width_count114,0
 
 lib/todo/db.rb,274
 module TodoTodo5,0
@@ -30,16 +34,19 @@ module TodoTodo5,0
 	  def self.create_table_if_not_exists(path)create_table_if_not_exists34,0
 	  def self.create_database_path(path)create_database_path54,0
 
-lib/todo/task.rb,367
+lib/todo/task.rb,595
 module TodoTodo4,0
    class Task < ActiveRecord::BaseTask8,0
 	  scope :status_is, ->(status) { where(status: status) }status_is9,0
-	  NOT_YET = 0 # タスクが完了していないNOT_YET11,0
-	  DONE    = 1 # タスクが完了したDONE13,0
-	  PENDING = 2 # 保留中のタスクPENDING15,0
-	  STATUS = {STATUS18,0
-	  def status_namestatus_name28,0
+	  scope :status_is_not_yet, -> { status_is(NOT_YET) }status_is_not_yet11,0
+	  scope :status_is_done,    -> { status_is(DONE) }status_is_done12,0
+	  scope :status_is_pending, -> { status_is(PENDING) }status_is_pending13,0
+	  NOT_YET = 0 # タスクが完了していないNOT_YET15,0
+	  DONE    = 1 # タスクが完了したDONE17,0
+	  PENDING = 2 # 保留中のタスクPENDING19,0
+	  STATUS = {STATUS22,0
+	  def status_namestatus_name32,0
 
 lib/todo/version.rb,53
 module TodoTodo1,0
-  VERSION = "1.0.0"VERSION2,0
+  VERSION = "2.0.0"VERSION2,0

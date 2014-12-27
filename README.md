@@ -117,6 +117,23 @@ delete id                                Delete Todo Task
 ### Webインターフェースの追加
 #### Todo2.0.0の仕様
 #### SinatraとHamlを組み込み、一覧を表示する
+#### タスクの作成／編集／削除機能の実装
+### 再びtodoコマンド
+#### コマンドラインオプションの追加
+### Todoアプリケーション2.0.0の完成
+#### バージョンを2.0.0に上げてgemパッケージを作ろう
+```bash
+$ bundle exec rake build
+$ gem install pkg/todo-2.0.0
+$ gem list todo
+
+*** LOCAL GEMS ***
+
+todo (2.0.0, 1.0.0)
+$ todo -v
+todo 2.0.0
+$ todo server
+```
 
 # 参照
 + [パーフェクトRuby](http://gihyo.jp/book/2013/978-4-7741-5879-2)

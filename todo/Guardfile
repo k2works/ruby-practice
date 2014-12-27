@@ -35,3 +35,7 @@ guard 'yard' do
   watch(%r{lib/.+\.rb})
   watch(%r{ext/.+\.c})
 end
+
+guard 'livereload' do
+  watch(%r{lib/views/.+\.(erb|haml|slim)$})
+end

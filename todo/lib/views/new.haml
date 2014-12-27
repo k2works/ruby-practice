@@ -1,0 +1,9 @@
+%h1 New Task
+
+!= haml :_errors, locals: {task: @task}
+
+%form.form-horizontal(method='post' action='/tasks')
+
+  != haml :_form, locals: {task: @task}
+  .form-group    
+    %input.btn.btn-default(name='commit' type='submit' vaue='Create')

@@ -1,0 +1,10 @@
+.form-group{class: error_class(task, :name)}
+  %label(for= 'task_name') Name
+  %input#task_name.form-control(name='name' placeholder='例:買い物' type='text'){value: @task.name}
+.form-group{class: error_class(task, :name)}
+  %label(for='task_content') Content
+  %input#task_content.form-control.col-md-6(name='content' placeholder='例:牛乳を買う' type='text'){value: @task.content}
+.form-group
+  %label(for='task_status') Status
+  %select#task_status.form-control(name='status')
+    != options_for_task_status(task)
